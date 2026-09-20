@@ -216,3 +216,107 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# -----------------------------------------------------------------------------
+# Project-specific rules for Python deep learning / medical imaging projects
+# -----------------------------------------------------------------------------
+
+# Keep project source, docs, tests, scripts, configs, and .gitkeep tracked.
+# README.md, requirements.txt, src/, notebooks/, tests/, scripts/, configs/, and
+# .gitkeep files are intentionally not ignored.
+
+# Datasets and raw data
+# Ignore large data files in project data folders while keeping directory placeholders.
+data/raw/**/*
+!data/raw/.gitkeep
+
+data/processed/**/*
+!data/processed/.gitkeep
+
+data/splits/**/*
+!data/splits/.gitkeep
+
+datasets/
+datasets/**/*
+
+# Common archive and dataset file formats under data folders
+# (targeted to project data, not globally across all CSVs)
+data/**/*.csv
+data/**/*.zip
+data/**/*.tar
+data/**/*.tar.gz
+data/**/*.gz
+data/**/*.npy
+data/**/*.npz
+data/**/*.h5
+data/**/*.hdf5
+
+# Model artifacts and checkpoints
+*.pt
+*.pth
+*.ckpt
+*.ckpt.*
+*.h5
+*.hdf5
+*.keras
+*.onnx
+*.safetensors
+*.tflite
+*.pb
+*.pbtxt
+
+checkpoints/
+checkpoint/
+checkpoints/**/*
+models/checkpoints/**
+models/best_models/**
+
+# Experiment tracking and generated outputs
+mlruns/
+wandb/
+runs/
+tensorboard/
+tb_logs/
+logs/
+outputs/
+artifacts/
+experiments/
+results/**/*
+!results/.gitkeep
+
+# Deep learning framework temp files
+*.pt
+*.pth
+*.ckpt
+*.ckpt.*
+*.h5
+*.hdf5
+*.keras
+*.onnx
+*.safetensors
+*.tflite
+*.pb
+*.pbtxt
+
+# Secrets, credentials, environment and local sensitive files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+.secrets
+secrets.*
+credentials.*
+api_keys.*
+*.token
+
+# Local configuration that may contain sensitive data
+local_settings.py
+settings_local.py
+config_local.py
+**/local_config.*
+**/secrets.*
